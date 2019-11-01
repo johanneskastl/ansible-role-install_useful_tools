@@ -1,0 +1,7 @@
+---
+# tasks file for install_useful_tools
+
+- name: "Install useful tools"
+  package:
+    name: "{{ useful_tools}}"
+    state: "present"
