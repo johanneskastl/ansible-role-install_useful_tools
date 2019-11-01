@@ -1,0 +1,13 @@
+galaxy_info:
+  role_name: 'install_useful_tools'
+  author: 'Johannes Kastl'
+  description: 'Install some useful tools'
+  company: 'B1 Systems GmbH'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: 2.4
+
+  galaxy_tags: []
+
+dependencies: []
