@@ -1,0 +1,14 @@
+---
+# defaults file for install_useful_tools
+
+useful_tools:
+    - emacs-nox
+    - vim
+    - git-core
+    - screen
+    - curl
+    - wget
+    - netcat-openbsd
+
+# tmux not present in SLES 15*
+#     - tmux
