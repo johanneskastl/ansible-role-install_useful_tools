@@ -3,5 +3,5 @@
 
 - name: "Install useful tools"
   package:
-    name: "{{ useful_tools}}"
+    name: "{{ useful_tools }}"
     state: "present"
