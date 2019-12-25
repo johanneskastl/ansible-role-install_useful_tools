@@ -8,7 +8,9 @@ useful_tools:
     - screen
     - curl
     - wget
-    - netcat-openbsd
 
-# tmux not present in SLES 15*
-#     - tmux
+# The following packages will be added later,
+# depending on the OS, in tasks/main.yml:
+# - tmux is not present in SLES
+# - netcat is called netcat-openbsd on SUSE
+# - netcat is called nmap-netcat on CentOS

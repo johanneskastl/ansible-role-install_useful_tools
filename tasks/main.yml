@@ -1,6 +1,21 @@
 ---
 # tasks file for install_useful_tools
 
+- name: "Add package tmux on openSUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['tmux']"
+  when: 'ansible_os_family == "openSUSE Leap"'
+
+- name: "Add package netcat-openbsd on *SUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
+  when: 'ansible_os_family == "Suse" or ansible_os_family == "openSUSE Leap"'
+
+- name: "Add package nmap-ncat on CentOS/RedHat"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['nmap-ncat']"
+  when: 'ansible_os_family == "RedHat"'
+
 - name: "Install useful tools"
   package:
     name: "{{ useful_tools }}"
