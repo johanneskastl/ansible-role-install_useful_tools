@@ -6,6 +6,11 @@
     useful_tools: "{{ useful_tools }} + ['tmux']"
   when: 'ansible_os_family == "Suse" and ansible_distribution == "openSUSE Leap"'
 
+- name: "Add package tmux on Debian"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['tmux']"
+  when: 'ansible_os_family == "Debian"'
+
 - name: "Add package netcat-openbsd on *SUSE"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
