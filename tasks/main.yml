@@ -11,6 +11,11 @@
     useful_tools: "{{ useful_tools }} + ['tmux']"
   when: 'ansible_os_family == "Debian"'
 
+- name: "Add package tmux on Fedora"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['tmux']"
+  when: 'ansible_distribution == "Fedora"'
+
 - name: "Add package netcat-openbsd on *SUSE"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
