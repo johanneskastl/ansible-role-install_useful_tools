@@ -2,11 +2,11 @@
 # defaults file for install_useful_tools
 
 useful_tools:
-    - vim
     - curl
-    - wget
-    - tcpdump
     - nmap
+    - tcpdump
+    - vim
+    - wget
 
 # The following packages will be added later,
 # depending on the OS, in tasks/main.yml:
