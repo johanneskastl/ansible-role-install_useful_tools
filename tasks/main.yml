@@ -21,6 +21,24 @@
   when: 'ansible_distribution == "Fedora"'
 
 #
+# add git where available
+#
+- name: "Add package git-core on openSUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['git-core']"
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+
+- name: "Add package git on Debian"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['git']"
+  when: 'ansible_os_family == "Debian"'
+
+- name: "Add package git on Fedora"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['git']"
+  when: 'ansible_distribution == "Fedora"'
+
+#
 # add netcat where available
 #
 - name: "Add package netcat-openbsd on *SUSE"

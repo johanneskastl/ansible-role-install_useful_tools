@@ -4,7 +4,6 @@
 useful_tools:
     - emacs-nox
     - vim
-    - git-core
     - screen
     - curl
     - wget
