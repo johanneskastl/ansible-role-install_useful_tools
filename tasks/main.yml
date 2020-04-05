@@ -3,6 +3,39 @@
 
 
 #
+# add emacs-nox where available
+#
+- name: "Add package emacs on CentOS/RedHat"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs']"
+  when: 'ansible_os_family == "RedHat"'
+
+- name: "Add package emacs-nox on Debian"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs-nox']"
+  when: 'ansible_distribution == "Debian"'
+
+- name: "Add package emacs-nox on Fedora"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs-nox']"
+  when: 'ansible_distribution == "Fedora"'
+
+- name: "Add package emacs-nox on openSUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs-nox']"
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+
+- name: "Add package emacs on Ubuntu 14.04"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs']"
+  when: 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int == 14'
+
+- name: "Add package emacs-nox on Ubuntu 16.04 or later"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['emacs-nox']"
+  when: 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int != 14'
+
+#
 # add tmux where available
 #
 - name: "Add package tmux on Debian"
