@@ -8,6 +8,8 @@ useful_tools:
     - screen
     - curl
     - wget
+    - tcpdump
+    - nmap
 
 # The following packages will be added later,
 # depending on the OS, in tasks/main.yml:
