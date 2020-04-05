@@ -66,8 +66,6 @@
   when: 'ansible_distribution != "openSUSE MicroOS"'
 
 - name: "Install useful tools on openSUSE MicroOS"
-  command:
-  args:
   command: '/usr/sbin/transactional-update --non-interactive pkg install {{ useful_tools | join(" ") }}'
   when: 'ansible_distribution == "openSUSE MicroOS"'
   notify:
