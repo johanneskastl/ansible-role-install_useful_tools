@@ -28,6 +28,11 @@
 #
 # add git where available
 #
+- name: "Add package git on CentOS/RedHat"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['git']"
+  when: 'ansible_os_family == "RedHat"'
+
 - name: "Add package git on Debian"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['git']"
