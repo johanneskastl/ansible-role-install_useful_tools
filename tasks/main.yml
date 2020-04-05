@@ -46,10 +46,15 @@
     useful_tools: "{{ useful_tools }} + ['nmap-ncat']"
   when: 'ansible_os_family == "RedHat"'
 
-- name: "Add package netcat-openbsd on *SUSE"
+- name: "Add package netcat-openbsd on openSUSE"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
-  when: 'ansible_os_family == "Suse"'
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+
+- name: "Add package netcat-openbsd on SLES"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
+  when: 'ansible_distribution == "SLES"'
 
 #
 # install the tools
