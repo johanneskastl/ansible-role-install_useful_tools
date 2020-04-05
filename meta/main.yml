@@ -12,4 +12,5 @@ galaxy_info:
 
 dependencies:
    - { role: 'install_epel_release' }
+   - { role: 'update_debian_ubuntu_sources' }
    - { role: 'reboot' }
