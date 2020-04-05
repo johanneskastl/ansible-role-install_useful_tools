@@ -41,15 +41,15 @@
 #
 # add netcat where available
 #
-- name: "Add package netcat-openbsd on *SUSE"
-  set_fact:
-    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
-  when: 'ansible_os_family == "Suse"'
-
 - name: "Add package nmap-ncat on CentOS/RedHat"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['nmap-ncat']"
   when: 'ansible_os_family == "RedHat"'
+
+- name: "Add package netcat-openbsd on *SUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
+  when: 'ansible_os_family == "Suse"'
 
 #
 # install the tools
