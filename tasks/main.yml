@@ -5,11 +5,6 @@
 #
 # add tmux where available
 #
-- name: "Add package tmux on openSUSE"
-  set_fact:
-    useful_tools: "{{ useful_tools }} + ['tmux']"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
-
 - name: "Add package tmux on Debian"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['tmux']"
@@ -19,6 +14,11 @@
   set_fact:
     useful_tools: "{{ useful_tools }} + ['tmux']"
   when: 'ansible_distribution == "Fedora"'
+
+- name: "Add package tmux on openSUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['tmux']"
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 #
 # add git where available
