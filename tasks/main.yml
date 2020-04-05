@@ -56,6 +56,11 @@
     useful_tools: "{{ useful_tools }} + ['nmap-ncat']"
   when: 'ansible_os_family == "RedHat"'
 
+- name: "Add package netcat-openbsd on Debian"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
+  when: 'ansible_distribution == "Debian"'
+
 - name: "Add package netcat-openbsd on openSUSE"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
