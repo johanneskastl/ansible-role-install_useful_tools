@@ -20,6 +20,11 @@
     useful_tools: "{{ useful_tools }} + ['tmux']"
   when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
+- name: "Add package tmux on Ubuntu"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['tmux']"
+  when: 'ansible_distribution == "Ubuntu"'
+
 #
 # add git where available
 #
