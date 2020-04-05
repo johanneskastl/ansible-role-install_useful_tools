@@ -13,7 +13,7 @@
 - name: "Add package tmux on Debian"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['tmux']"
-  when: 'ansible_os_family == "Debian"'
+  when: 'ansible_distribution == "Debian"'
 
 - name: "Add package tmux on Fedora"
   set_fact:
@@ -31,7 +31,7 @@
 - name: "Add package git on Debian"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['git']"
-  when: 'ansible_os_family == "Debian"'
+  when: 'ansible_distribution == "Debian"'
 
 - name: "Add package git on Fedora"
   set_fact:
