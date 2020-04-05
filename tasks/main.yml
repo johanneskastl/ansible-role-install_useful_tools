@@ -23,11 +23,6 @@
 #
 # add git where available
 #
-- name: "Add package git-core on openSUSE"
-  set_fact:
-    useful_tools: "{{ useful_tools }} + ['git-core']"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
-
 - name: "Add package git on Debian"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['git']"
@@ -37,6 +32,11 @@
   set_fact:
     useful_tools: "{{ useful_tools }} + ['git']"
   when: 'ansible_distribution == "Fedora"'
+
+- name: "Add package git-core on openSUSE"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['git-core']"
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 #
 # add netcat where available
