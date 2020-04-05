@@ -2,7 +2,6 @@
 # defaults file for install_useful_tools
 
 useful_tools:
-    - emacs-nox
     - vim
     - screen
     - curl
