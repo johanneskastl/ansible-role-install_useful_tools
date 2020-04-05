@@ -71,6 +71,11 @@
     useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
   when: 'ansible_distribution == "SLES"'
 
+- name: "Add package netcat-openbsd on Ubuntu"
+  set_fact:
+    useful_tools: "{{ useful_tools }} + ['netcat-openbsd']"
+  when: 'ansible_distribution == "Ubuntu"'
+
 #
 # install the tools
 #
