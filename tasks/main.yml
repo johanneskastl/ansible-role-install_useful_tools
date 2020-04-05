@@ -8,7 +8,7 @@
 - name: "Add package tmux on openSUSE"
   set_fact:
     useful_tools: "{{ useful_tools }} + ['tmux']"
-  when: 'ansible_os_family == "Suse" and (ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS")'
+  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 - name: "Add package tmux on Debian"
   set_fact:
