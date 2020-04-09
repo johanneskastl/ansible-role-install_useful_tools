@@ -126,6 +126,8 @@
 - name: "Install useful tools on openSUSE MicroOS"
   command: '/usr/sbin/transactional-update --non-interactive pkg install {{ useful_tools | join(" ") }}'
   when: 'ansible_distribution == "openSUSE MicroOS"'
+  register: transactional_update_pkg
+  changed_when: '"zypper: nothing to update" not in transactional_update_pkg.stdout'
   notify:
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
