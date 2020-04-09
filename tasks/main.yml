@@ -131,3 +131,6 @@
   notify:
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
+
+- name: 'transactional-updates: force reboot at this point to not loose changes'
+  meta: flush_handlers
