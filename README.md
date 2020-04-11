@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-install_useful_tools/workflows/Ansible%20Lint/badge.svg)
+
 install_useful_tools
 =========
 
@@ -11,7 +13,7 @@ None.
 Role Variables
 --------------
 
-`useful_tools`: List of packages, currently SLES/openSUSE-based.
+`useful_tools`: List of packages. Only a basic set is defined in defaults/main.yml, others are added on a per-distribution basis with correct names, only if available.
 
 Dependencies
 ------------
