@@ -6,6 +6,7 @@ useful_tools:
     - nmap
     - screen
     - tcpdump
+    - tree
     - vim
     - wget
 
