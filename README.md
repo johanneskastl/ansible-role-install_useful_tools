@@ -1,5 +1,3 @@
-![Ansible Lint](https://github.com/johanneskastl/ansible-role-install_useful_tools/workflows/Ansible%20Lint/badge.svg)
-
 install_useful_tools
 =========
 
