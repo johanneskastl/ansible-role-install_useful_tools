@@ -141,5 +141,5 @@
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
 
-- name: 'transactional-updates: force reboot at this point to not loose changes'
+- name: 'Transactional-updates: force reboot at this point to not loose changes'
   ansible.builtin.meta: flush_handlers
