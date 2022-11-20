@@ -52,6 +52,11 @@
 #
 # add tmux where available
 #
+- name: "Add package tmux on Alpine"
+  ansible.builtin.set_fact:
+    useful_tools: "{{ useful_tools + ['tmux'] }}"
+  when: 'ansible_os_family == "Alpine"'
+
 - name: "Add package tmux on Debian"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
