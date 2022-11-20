@@ -80,6 +80,11 @@
 #
 # add git where available
 #
+- name: "Add package git on Alpine"
+  ansible.builtin.set_fact:
+    useful_tools: "{{ useful_tools + ['git'] }}"
+  when: 'ansible_os_family == "Alpine"'
+
 - name: "Add package git on CentOS/RedHat"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
