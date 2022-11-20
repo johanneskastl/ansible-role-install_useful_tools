@@ -7,7 +7,10 @@ galaxy_info:
 
   license: 'BSD-3-Clause'
 
-  min_ansible_version: 2.4
+  min_ansible_version: '2.4'
+
+  # https://ansible-lint.readthedocs.io/rules/schema/#schema-meta
+  standalone: true
 
   platforms:
     - name: EL
