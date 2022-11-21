@@ -141,17 +141,17 @@
 #
 # install the tools
 #
-- name: "Install useful tools"
+- name: "Install useful tools without a reboot"
   ansible.builtin.package:
     name: "{{ useful_tools }}"
     state: "present"
   when: 'ansible_distribution != "openSUSE MicroOS"'
 
-- name: "Install useful tools on openSUSE MicroOS"
-  ansible.builtin.command: '/usr/sbin/transactional-update --non-interactive pkg install {{ useful_tools | join(" ") }}'
+- name: "Install useful tools with a reboot on openSUSE MicroOS"
+  ansible.builtin.package:
+    name: "{{ useful_tools }}"
+    state: "present"
   when: 'ansible_distribution == "openSUSE MicroOS"'
-  register: transactional_update_pkg
-  changed_when: '"zypper: nothing to update" not in transactional_update_pkg.stdout'
   notify:
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
