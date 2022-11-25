@@ -72,6 +72,11 @@
     useful_tools: "{{ useful_tools + ['tmux'] }}"
   when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
+- name: "Add package tmux on OpenWrt"
+  ansible.builtin.set_fact:
+    useful_tools: "{{ useful_tools + ['tmux'] }}"
+  when: 'ansible_os_family == "OpenWrt"'
+
 - name: "Add package tmux on Ubuntu"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
