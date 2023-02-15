@@ -54,13 +54,15 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs'] }}"
   when:
-    - 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int == 14'
+    - 'ansible_distribution == "Ubuntu"'
+    - 'ansible_distribution_major_version|int == 14'
 
 - name: "Add package emacs-nox on Ubuntu 16.04 or later"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
   when:
-    - 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int != 14'
+    - 'ansible_distribution == "Ubuntu"'
+    - 'ansible_distribution_major_version|int != 14'
 
 #
 # add tmux where available
