@@ -16,14 +16,14 @@
     useful_tools: "{{ useful_tools + ['emacs'] }}"
   when:
     - 'ansible_os_family == "RedHat"'
-    - 'ansible_distribution_major_version|int == "7"'
+    - 'ansible_distribution_major_version|int == 7'
 
 - name: "Add package emacs-nox on CentOS/RedHat/RockyLinux/AlmaLinux 8"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
-    - 'ansible_distribution_major_version|int == "8"'
+    - 'ansible_distribution_major_version|int == 8'
 
 - name: "Add package emacs-nox on Debian"
   ansible.builtin.set_fact:
