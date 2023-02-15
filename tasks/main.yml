@@ -41,7 +41,10 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
   when:
-    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "Suse"
+      or ansible_os_family == "openSUSE MicroOS"
+      '
 
 - name: "Add package emacs on Ubuntu 14.04"
   ansible.builtin.set_fact:
@@ -80,7 +83,10 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
   when:
-    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "Suse"
+      or ansible_os_family == "openSUSE MicroOS"
+      '
 
 - name: "Add package tmux on OpenWrt"
   ansible.builtin.set_fact:
@@ -125,7 +131,10 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git-core'] }}"
   when:
-    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "Suse"
+      or ansible_os_family == "openSUSE MicroOS"
+      '
 
 - name: "Add package git on OpenWrt"
   ansible.builtin.set_fact:
@@ -158,7 +167,10 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['netcat-openbsd'] }}"
   when:
-    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "Suse"
+      or ansible_os_family == "openSUSE MicroOS"
+      '
 
 - name: "Add package netcat-openbsd on SLES"
   ansible.builtin.set_fact:
