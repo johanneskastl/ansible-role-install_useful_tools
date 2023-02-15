@@ -190,14 +190,18 @@
     name: "{{ useful_tools }}"
     state: "present"
   when:
-    - 'ansible_distribution != "openSUSE MicroOS"'
+    - 'ansible_os_family != "openSUSE MicroOS"'
+    - 'ansible_os_family != "openSUSE Leap Micro"'
 
 - name: "Install useful tools with a reboot on openSUSE MicroOS"
   ansible.builtin.package:
     name: "{{ useful_tools }}"
     state: "present"
   when:
-    - 'ansible_distribution == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "openSUSE MicroOS"
+      or ansible_os_family == "openSUSE Leap Micro"
+      '
   notify:
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
