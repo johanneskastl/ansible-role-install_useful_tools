@@ -22,7 +22,10 @@
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
   when:
-    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
+    - '
+      ansible_os_family == "RedHat"
+      or ansible_os_family == "Rocky"
+      '
     - 'ansible_distribution_major_version|int >= 8'
 
 - name: "Add package emacs-nox on Debian"
