@@ -8,7 +8,8 @@
 - name: "Add package emacs-nox on Alpine"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when: 'ansible_os_family == "Alpine"'
+  when:
+    - 'ansible_os_family == "Alpine"'
 
 - name: "Add package emacs on CentOS/RedHat 7"
   ansible.builtin.set_fact:
@@ -27,27 +28,32 @@
 - name: "Add package emacs-nox on Debian"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when: 'ansible_distribution == "Debian"'
+  when:
+    - 'ansible_distribution == "Debian"'
 
 - name: "Add package emacs-nox on Fedora"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when: 'ansible_distribution == "Fedora"'
+  when:
+    - 'ansible_distribution == "Fedora"'
 
 - name: "Add package emacs-nox on openSUSE"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 - name: "Add package emacs on Ubuntu 14.04"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs'] }}"
-  when: 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int == 14'
+  when:
+    - 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int == 14'
 
 - name: "Add package emacs-nox on Ubuntu 16.04 or later"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when: 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int != 14'
+  when:
+    - 'ansible_distribution == "Ubuntu" and ansible_distribution_major_version|int != 14'
 
 #
 # add tmux where available
@@ -55,32 +61,38 @@
 - name: "Add package tmux on Alpine"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_os_family == "Alpine"'
+  when:
+    - 'ansible_os_family == "Alpine"'
 
 - name: "Add package tmux on Debian"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_distribution == "Debian"'
+  when:
+    - 'ansible_distribution == "Debian"'
 
 - name: "Add package tmux on Fedora"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_distribution == "Fedora"'
+  when:
+    - 'ansible_distribution == "Fedora"'
 
 - name: "Add package tmux on openSUSE"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 - name: "Add package tmux on OpenWrt"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_os_family == "OpenWrt"'
+  when:
+    - 'ansible_os_family == "OpenWrt"'
 
 - name: "Add package tmux on Ubuntu"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
-  when: 'ansible_distribution == "Ubuntu"'
+  when:
+    - 'ansible_distribution == "Ubuntu"'
 
 #
 # add git where available
@@ -88,37 +100,44 @@
 - name: "Add package git on Alpine"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_os_family == "Alpine"'
+  when:
+    - 'ansible_os_family == "Alpine"'
 
 - name: "Add package git on CentOS/RedHat"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_os_family == "RedHat"'
+  when:
+    - 'ansible_os_family == "RedHat"'
 
 - name: "Add package git on Debian"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_distribution == "Debian"'
+  when:
+    - 'ansible_distribution == "Debian"'
 
 - name: "Add package git on Fedora"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_distribution == "Fedora"'
+  when:
+    - 'ansible_distribution == "Fedora"'
 
 - name: "Add package git-core on openSUSE"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git-core'] }}"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 - name: "Add package git on OpenWrt"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_os_family == "OpenWrt"'
+  when:
+    - 'ansible_os_family == "OpenWrt"'
 
 - name: "Add package git on Ubuntu"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['git'] }}"
-  when: 'ansible_distribution == "Ubuntu"'
+  when:
+    - 'ansible_distribution == "Ubuntu"'
 
 #
 # add netcat where available
@@ -126,27 +145,32 @@
 - name: "Add package nmap-ncat on CentOS/RedHat"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['nmap-ncat'] }}"
-  when: 'ansible_os_family == "RedHat"'
+  when:
+    - 'ansible_os_family == "RedHat"'
 
 - name: "Add package netcat-openbsd on Debian"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['netcat-openbsd'] }}"
-  when: 'ansible_distribution == "Debian"'
+  when:
+    - 'ansible_distribution == "Debian"'
 
 - name: "Add package netcat-openbsd on openSUSE"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['netcat-openbsd'] }}"
-  when: 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution == "openSUSE Leap" or ansible_distribution == "openSUSE MicroOS"'
 
 - name: "Add package netcat-openbsd on SLES"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['netcat-openbsd'] }}"
-  when: 'ansible_distribution == "SLES"'
+  when:
+    - 'ansible_distribution == "SLES"'
 
 - name: "Add package netcat-openbsd on Ubuntu"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['netcat-openbsd'] }}"
-  when: 'ansible_distribution == "Ubuntu"'
+  when:
+    - 'ansible_distribution == "Ubuntu"'
 
 #
 # install the tools
@@ -155,13 +179,15 @@
   ansible.builtin.package:
     name: "{{ useful_tools }}"
     state: "present"
-  when: 'ansible_distribution != "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution != "openSUSE MicroOS"'
 
 - name: "Install useful tools with a reboot on openSUSE MicroOS"
   ansible.builtin.package:
     name: "{{ useful_tools }}"
     state: "present"
-  when: 'ansible_distribution == "openSUSE MicroOS"'
+  when:
+    - 'ansible_distribution == "openSUSE MicroOS"'
   notify:
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
