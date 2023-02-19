@@ -38,10 +38,10 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - role: 'AlmaLinux_install_epel-release'
-  - role: 'CentOS_install_epel-release'
-  - role: 'RedHat_install_epel-release'
-  - role: 'RockyLinux_install_epel-release'
-  - role: 'update_debian_ubuntu_sources'
-  - role: 'zypper_ref_accept_keys'
-  - role: 'reboot'
+  - role: 'johanneskastl.AlmaLinux_install_epel-release'
+  - role: 'johanneskastl.CentOS_install_epel-release'
+  - role: 'johanneskastl.RedHat_install_epel-release'
+  - role: 'johanneskastl.RockyLinux_install_epel-release'
+  - role: 'johanneskastl.update_debian_ubuntu_sources'
+  - role: 'johanneskastl.zypper_ref_accept_keys'
+  - role: 'johanneskastl.reboot'
