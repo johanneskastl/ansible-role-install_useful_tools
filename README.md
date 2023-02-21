@@ -13,7 +13,11 @@ None.
 Role Variables
 --------------
 
-`useful_tools`: List of packages. Only a basic set is defined in defaults/main.yml, others are added on a per-distribution basis with correct names, only if available.
+- `useful_tools`: List of packages. Only a basic set is defined in `defaults/main.yml`, others are added on a per-distribution basis with correct names, only if available.
+
+If you use this role on OpenWrt, you can decide if you want the `git` package to be installed (or not, to save space):
+
+- `add_git_on_openwrt`: Boolean to decide if git is to be installed on OpenWrt (default: `true`)
 
 Dependencies
 ------------
