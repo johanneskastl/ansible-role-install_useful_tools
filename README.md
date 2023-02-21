@@ -29,7 +29,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.install_useful_tools' }
+         - role: 'johanneskastl.install_useful_tools'
 
 License
 -------
