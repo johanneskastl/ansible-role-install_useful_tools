@@ -19,3 +19,6 @@ useful_tools:
 # - tmux is not present in SLES
 # - netcat is called netcat-openbsd on SUSE
 # - netcat is called nmap-netcat on CentOS
+
+# allow the user not to install git on OpenWrt
+add_git_on_openwrt: true
