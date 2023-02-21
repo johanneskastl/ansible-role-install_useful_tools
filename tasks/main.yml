@@ -149,6 +149,7 @@
     useful_tools: "{{ useful_tools + ['git'] }}"
   when:
     - 'ansible_os_family == "OpenWrt"'
+    - 'add_git_on_openwrt | bool'
 
 - name: "Add package git on Ubuntu"
   ansible.builtin.set_fact:
