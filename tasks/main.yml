@@ -27,6 +27,7 @@
       or ansible_os_family == "Rocky"
       '
     - 'ansible_distribution_major_version|int >= 8'
+    - 'not ansible_pkg_mgr == "atomic_container"'
 
 - name: "Add package emacs-nox on Debian"
   ansible.builtin.set_fact:
@@ -39,6 +40,7 @@
     useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
   when:
     - 'ansible_distribution == "Fedora"'
+    - 'not ansible_pkg_mgr == "atomic_container"'
 
 - name: "Add package emacs-nox on openSUSE"
   ansible.builtin.set_fact:
