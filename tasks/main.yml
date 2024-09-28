@@ -200,6 +200,16 @@
     - 'not ansible_os_family == "openSUSE Leap Micro"'
     - 'not ansible_pkg_mgr == "atomic_container"'
 
+- name: 'Install useful tools with a reboot on Fedora/RedHat CoreOS'
+  community.general.rpm_ostree_pkg:
+    name: "{{ useful_tools }}"
+    state: 'present'
+  when:
+    - 'ansible_os_family == "RedHat" and ansible_pkg_mgr == "atomic_container"'
+  notify:
+    - 'Reboot'
+    - 'Wait for the machine(s) to be ready again'
+
 - name: "Install useful tools with a reboot on openSUSE MicroOS"
   ansible.builtin.package:
     name: "{{ useful_tools }}"
