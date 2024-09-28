@@ -196,8 +196,9 @@
     name: "{{ useful_tools }}"
     state: "present"
   when:
-    - 'ansible_os_family != "openSUSE MicroOS"'
-    - 'ansible_os_family != "openSUSE Leap Micro"'
+    - 'not ansible_os_family == "openSUSE MicroOS"'
+    - 'not ansible_os_family == "openSUSE Leap Micro"'
+    - 'not ansible_pkg_mgr == "atomic_container"'
 
 - name: "Install useful tools with a reboot on openSUSE MicroOS"
   ansible.builtin.package:
