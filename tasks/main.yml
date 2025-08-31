@@ -50,6 +50,7 @@
       ansible_os_family == "Suse"
       or ansible_os_family == "openSUSE MicroOS"
       or ansible_os_family == "openSUSE Leap Micro"
+      or ansible_os_family == "openSUSE Tumbleweed-Slowroll"
       '
 
 - name: "Add package emacs on Ubuntu 14.04"
@@ -95,6 +96,7 @@
       ansible_os_family == "Suse"
       or ansible_os_family == "openSUSE MicroOS"
       or ansible_os_family == "openSUSE Leap Micro"
+      or ansible_os_family == "openSUSE Tumbleweed-Slowroll"
       '
 
 - name: "Add package tmux on OpenWrt"
@@ -144,6 +146,7 @@
       ansible_os_family == "Suse"
       or ansible_os_family == "openSUSE MicroOS"
       or ansible_os_family == "openSUSE Leap Micro"
+      or ansible_os_family == "openSUSE Tumbleweed-Slowroll"
       '
 
 - name: "Add package git on OpenWrt"
