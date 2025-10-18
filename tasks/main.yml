@@ -5,12 +5,6 @@
 #
 # add emacs-nox where available
 #
-- name: "Add package emacs-nox on Alpine"
-  ansible.builtin.set_fact:
-    useful_tools: "{{ useful_tools + ['emacs-nox'] }}"
-  when:
-    - 'ansible_os_family == "Alpine"'
-
 - name: "Add package emacs on CentOS/RedHat 7"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['emacs'] }}"
