@@ -82,6 +82,12 @@
   when:
     - 'ansible_distribution == "Fedora"'
 
+- name: "Add package tmux on FreeBSD"
+  ansible.builtin.set_fact:
+    useful_tools: "{{ useful_tools + ['tmux'] }}"
+  when:
+    - 'ansible_os_family == "FreeBSD"'
+
 - name: "Add package tmux on openSUSE"
   ansible.builtin.set_fact:
     useful_tools: "{{ useful_tools + ['tmux'] }}"
@@ -131,6 +137,12 @@
     useful_tools: "{{ useful_tools + ['git'] }}"
   when:
     - 'ansible_distribution == "Fedora"'
+
+- name: "Add package git on FreeBSD"
+  ansible.builtin.set_fact:
+    useful_tools: "{{ useful_tools + ['git'] }}"
+  when:
+    - 'ansible_os_family == "FreeBSD"'
 
 - name: "Add package git-core on openSUSE"
   ansible.builtin.set_fact:
